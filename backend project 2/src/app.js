@@ -15,7 +15,7 @@ app.post("/create-post", upload.single("image"), async (req, res) => {
     console.log(req.file);
 
     const post = await postModel.create({
-        image: result.url,
+        image: result?.url,
         caption: req.body.caption
     })
 
