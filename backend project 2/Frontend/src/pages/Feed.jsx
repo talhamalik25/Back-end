@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import CreatePost from './CreatePost'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Feed = () => {
 
-  const [posts, _setPosts] = useState([
+  const [posts, setPosts] = useState([
     {
       _id: "1",
       image: "https://picsum.photos/400/300?1",
@@ -25,19 +25,25 @@ const Feed = () => {
       caption: "Nature is beautiful 🌿"
     }
   ])
+  useEffect(() => {
+    axios.get("http://localhost:5000/posts").then((res) => {
+      console.log(res.data);
+      setPosts(res.data.posts)
+    })
+  }, [])
 
   return (
     <div className="w-full">
       <section className="max-w-xl mx-auto mt-6 sm:mt-10 flex flex-col gap-5 px-3 sm:px-4">
         {posts.length > 0 ? (
           posts.map((post) => (
-            <div 
-              key={post._id} 
+            <div
+              key={post._id}
               className="bg-white shadow rounded-xl overflow-hidden"
             >
-              <img 
-                src={post.image} 
-                alt="" 
+              <img
+                src={post.image}
+                alt=""
                 className="w-full h-48 sm:h-60 object-cover"
               />
 

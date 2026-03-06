@@ -1,6 +1,12 @@
 import React from 'react'
+import axios from 'axios'
 
 const CreatePost = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+  }
   return (
     <section className="flex items-center justify-center min-h-screen bg-gray-100">
       
@@ -10,7 +16,7 @@ const CreatePost = () => {
           Create Post
         </h1>
 
-        <form className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
           {/* Image Upload */}
           <div className="flex flex-col gap-2">
