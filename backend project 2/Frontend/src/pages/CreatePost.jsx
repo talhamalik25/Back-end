@@ -6,6 +6,20 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const formData = new FormData(e.target);
+
+    axios.post("http://localhost:5000/create-post", formData)
+    .then((res)=> {
+      // alert("Post created successfully");
+      // e.target.reset();
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Error creating post");
+    })
+      
+
   }
   return (
     <section className="flex items-center justify-center min-h-screen bg-gray-100">
