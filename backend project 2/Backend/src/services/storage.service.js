@@ -10,6 +10,7 @@ async function uploadFile(buffer) {
         file: buffer.toString("base64"),
         fileName: "image.jpg"
     })
+    return result;
 }
 
 module.exports = uploadFile;

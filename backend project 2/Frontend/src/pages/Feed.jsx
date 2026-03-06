@@ -41,11 +41,11 @@ const Feed = () => {
               key={post._id}
               className="bg-white shadow rounded-xl overflow-hidden"
             >
-              <img
-                src={post.image}
-                alt=""
-                className="w-full h-48 sm:h-60 object-cover"
-              />
+          <img
+  src={post.image}
+  alt=""
+  className="w-full h-48 sm:h-60 object-cover"
+/>
 
               <p className="p-3 sm:p-4 text-sm sm:text-base text-gray-700">
                 {post.caption}
