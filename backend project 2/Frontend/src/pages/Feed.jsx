@@ -27,13 +27,23 @@ const Feed = () => {
   ])
 
   return (
-    <div>
-      <section className="max-w-xl mx-auto mt-10 flex flex-col gap-6">
+    <div className="w-full">
+      <section className="max-w-xl mx-auto mt-6 sm:mt-10 flex flex-col gap-5 px-3 sm:px-4">
         {posts.length > 0 ? (
           posts.map((post) => (
-            <div key={post._id} className="bg-white shadow-md rounded-lg overflow-hidden mb-6">
-              <img src={post.image} alt="" className="w-full h-60 object-cover"/>
-              <p className="p-4 text-gray-700">{post.caption}</p>
+            <div 
+              key={post._id} 
+              className="bg-white shadow rounded-xl overflow-hidden"
+            >
+              <img 
+                src={post.image} 
+                alt="" 
+                className="w-full h-48 sm:h-60 object-cover"
+              />
+
+              <p className="p-3 sm:p-4 text-sm sm:text-base text-gray-700">
+                {post.caption}
+              </p>
             </div>
           ))
         ) : (
