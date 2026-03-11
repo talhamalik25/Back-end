@@ -2,7 +2,10 @@ const moongoose = require('mongoose');
 
 const userSchema = new moongoose.Schema({
     username: String,
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     password: String,
 
 })
